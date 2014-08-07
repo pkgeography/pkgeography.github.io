@@ -53,10 +53,11 @@
 	 * @return: jQuery DOM object
 	 */
 	pkgeo.activityIndicator.prototype.add = function(options) {
-		return $('<div />', {
+		this.el = $('<div />', {
 			'class': 'glyphicon glyphicon-activity-indicator',
 			'css': (typeof options !== 'undefined' && typeof options.css !== 'undefined') ? options.css : ''
 		});
+		return this.el;
 	};
 
 	/*
@@ -65,8 +66,8 @@
 	 * @return: jQuery DOM object
 	 */
 	pkgeo.activityIndicator.prototype.remove = function() {
-		if ( typeof this !== 'undefined' ) {
-			return $(this).remove();
+		if ( typeof this !== 'undefined' && typeof this.el !== 'undefined' ) {
+			return this.el.remove();
 		}
 		else {
 			return $('div.glyphicon-activity-indicator').remove();
@@ -89,10 +90,22 @@ $(document).ready(function() {
 	var ai = new pkgeo.activityIndicator();
 
 	/*
+	 * Canvas for global access
+	 */
+
+	var mapCanvas = $('#mapCanvas');
+
+	// Add activity indicator to map
+	ai.add().addClass('with-background').insertAfter(mapCanvas);
+
+	/*
 	 * Load Google Maps with async method
 	 * @return: Google Maps Object
 	 */
-	pkgeo.gmap.init(document.getElementById('mapCanvas'), 37, 70, 4, function(map)	{
+	pkgeo.gmap.init(mapCanvas[0], 37, 70, 4, function(map)	{
 		// console.log(map);
+
+		// remove the activity indicator
+		ai.remove();
 	});
 });

@@ -1,16 +1,39 @@
+// import custom variables
 @import '_custom/_variables';
 
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 // endbower
+
 
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+
+// Import custom mixins and loose classes
+@import '_custom/_mixins';
+
+.glyphicon-activity-indicator {
+
+    @extend %abs-center;
+
+    background-color: #fff;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+
+    &.with-background {
+        padding: 15px;
+        border-radius: 100%;
+        box-shadow: 0 0px 1px rgba(black, 0.5);
+    }
 }
 
 .map-canvas {
