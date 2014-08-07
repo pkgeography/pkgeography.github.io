@@ -40,7 +40,4 @@ $ git push origin REPO_NAME
 
 ### Channels
 
-Website: [http://geography.pk](http://geography.pk)
-Facebook: [https://facebook.com/pkgeography](https://facebook.com/pkgeography)
-Twitter: [https://twitter.com/pkgeography](https://twitter.com/pkgeography)
-Google+: [https://plus.google.com/+GeographyPK](https://plus.google.com/+GeographyPK)
+[Website](http://geography.pk) | [Facebook](https://facebook.com/pkgeography) | [Twitter](https://twitter.com/pkgeography) | [Google+](https://plus.google.com/+GeographyPK)
